@@ -18,10 +18,3 @@ button.navbar-toggler{
     padding-left: 2px;
     padding: 5px;
 }
-#rotateX{
-    padding-top: 3px;
-}
-#rotate{
-    padding-top: 3px;
-    transform: rotate(90Deg);
-}

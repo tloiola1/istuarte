@@ -38,24 +38,7 @@ const CmsSchema = new Schema({
             img:      { type: String },
             link:     { type: String },
         },
-    ],
-    agenda: [
-        {
-            title:    { type: String },
-            caption:  { type: String },
-            img:      { type: String },
-            link:     { type: String },
-        },
-    ],
-    products: [
-        {
-            title:    { type: String },
-            caption:  { type: String },
-            img:      { type: String },
-            link:     { type: String },
-        },
-    ],
-
+    ]
 });
 
 // This creates our model from the above schema, using mongoose's model method

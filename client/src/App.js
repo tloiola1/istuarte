@@ -16,8 +16,8 @@ const App = () =>
         <Route exact path="/agenda" component={ Agenda } />
         <Route exact path="/login" component={ Login } />
         <Route exact path="/cms" component={ CMS } />
-        <Route exact path="/home" component={ Home } />
-        <Route exact path="/" component={ Components } />
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/components" component={ Components } />
       </Switch>
 </Router>;
 export default App;

@@ -3,6 +3,7 @@ import { Jumbotron, Grid, Row, Col } from 'react-bootstrap';
 import { Logo, Brand } from '../../components/Brand';
 import { BackImg} from '../../components/BackImg';
 import  '../../stylesheets/components/all.css';
+import  '../../stylesheets/components/icons.css';
 import  { NavHeader } from './NavHeader.js';
 import  { NavFooter } from './NavFooter.js';
 // import  '../../stylesheets/components/backimg.css';
@@ -20,7 +21,7 @@ class Components extends Component {
         this.state ={
             brand: 'ISTU ARTE',
             X: '|||',
-            rotate: 'rotate',
+            rotate: 'rotate90',
             background_img: 'http://tekthost.info/wp-content/uploads/2017/12/imposing-hair-salon-flooring-ideas-regarding-floor-how-to-design-a-functional-and-attractive-beauty-mary.jpg',
         };
     }
@@ -44,7 +45,7 @@ class Components extends Component {
     toggleIcon(){
         if(this.state.X === 'X'){
             this.setState({X: '|||'});
-            this.setState({rotate: 'rotate'});
+            this.setState({rotate: 'rotate90'});
         }else {
             this.setState({X: 'X'});
             this.setState({rotate: 'rotateX'});
@@ -78,18 +79,10 @@ class Components extends Component {
                         :<span></span>}
                     </Col>
                     : <span/>}
-                    {this.state.width < 768 ?
-                    <Grid>
-                    <Row style={{display: 'flex'}}>
-                    <Col xs={8} sm={8}>
-                        <h1> Something </h1>
-                    </Col> 
-                    <Col xs={4} sm={4} style={{float: 'right'}}>
-                        <NavFooter/>
-                    </Col>
-                    </Row>
-                    </Grid>
+                    {this.state.width <= 768 ?
+                    <Grid> <NavFooter/> </Grid>
                     : <span/>}
+
                 </Row>
             </div>
         )
