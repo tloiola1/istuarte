@@ -8,7 +8,7 @@
     "client": "cd client && npm run start",
     "test": "mocha",
     "prestart": "node scripts/build.js",
-    "start": "npm run client"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
