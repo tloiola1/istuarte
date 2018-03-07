@@ -1,0 +1,46 @@
+@media screen and (max-width: 992px){
+    .btn{
+        color: #000; 
+        float: right;
+        margin: 5px;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: 1px solid rgba(2, 1, 0, 0.7);
+    }
+    .btn a{
+        color: #000;
+    }
+    .btn a:hover{
+        color: #fff;
+    }
+    .btn:hover{
+        color: #fff;
+        background-color: rgba(2, 1, 0, 0.7);
+    }
+    .btn:focus{
+        color: #fff;
+        background-color: rgba(2, 1, 0, 0.7);
+    }
+    .sm-container{
+        margin-top: 15px;
+        padding: 0px;
+        float: right;
+        border-radius: 10px;
+        display: inline-flex;
+        border: 1px solid rgba(2, 1, 0, 0.7);
+        box-shadow: 1px 1px 10px rgba(2, 1, 0, 0.7);
+    }
+}
+@media screen and (max-width: 768px){
+    .brand-name{
+        font-size: 45px;
+        font-weight: 700;
+    }
+    nav.navbar{
+        padding: 5px;
+        line-height: 1;
+    }
+    .btn{
+        border: none;
+    }
+}

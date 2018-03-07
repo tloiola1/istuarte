@@ -1,0 +1,26 @@
+.btn{
+    color: white; 
+    font-weight: bolder;
+    float: right;
+    margin-top: 20px;
+}
+.btn:hover{
+    color: #000;
+    background-color: #fff;
+}
+.btn:focus{
+    color: #000;
+    background-color: #fff;
+}
+/* .nav-item{
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+}
+.nav-item:hover{
+    background-color: white;
+    color: #000;
+    text-underline-position: unset;
+}  */

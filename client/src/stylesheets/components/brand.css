@@ -1,0 +1,47 @@
+.brand-name{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 900;
+}
+.brand-name:hover{
+    color: #fff;
+    text-decoration-line: none;
+}
+.bar{
+    display: flex;
+    height: inherit;
+}
+.v-bar1{
+    width: 10px;
+    height: inherit;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    background-color: rgba(2, 1, 0, 0.85);
+}
+.v-bar2{
+    width: 10px;
+    height: inherit;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    background-color: rgba(2, 1, 0, 0.85);
+}
+.v-bar3{
+    width: 10px;
+    padding: 10px;
+    height: inherit;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(2, 1, 0, 0.85);
+}
+.h-bar{
+    width: 100%;
+    height: inherit;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(2, 1, 0, 0.85);
+}
