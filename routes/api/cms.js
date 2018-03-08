@@ -1,16 +1,8 @@
 const router = require("express").Router();
 const cmsController = require("../../controllers/cmsController");
 
-// Matches with "/api/cms"
-router.route("/")
-  .get(cmsController.findAll)
-  .post(cmsController.create);
+router.route("/") 
+  .get(cmsController.Get)
+  .post(cmsController.Post);
 
-// Matches with "/api/cms/:id"
-router
-  .route("/:id")
-  .get(cmsController.findById)
-  .put(cmsController.update)
-  .delete(cmsController.remove);
-
-module.exports = router;
+module.exports = router; 

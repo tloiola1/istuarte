@@ -1,37 +1,21 @@
 const db = require("../models");
 
-// Defining methods for the adimnController
+// Defining methods for the userController
 module.exports = {
-  findAll: function(req, res) {
+  get: function(req, res) {
+    console.log("Admin Controller Get");
     db.Admin
-      .find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
+      .find()
+      .then(_Admin => res.json(_Admin))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
-    db.Admin
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
+  post: function(req, res) {
+    console.log("Admin Controller Post");
+    console.log(req.body);
     db.Admin
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  update: function(req, res) {
-    db.Admin
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  remove: function(req, res) {
-    db.Admin
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+      .then(_Admin => res.json(_Admin))
       .catch(err => res.status(422).json(err));
   }
+
 };

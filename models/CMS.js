@@ -12,32 +12,30 @@ const CmsSchema = new Schema({
                 {
                     title:    { type: String },
                     img:      { type: String },
-                    link:     { type: String },
-                },
+                    link:     { type: String }
+                }
             ],
             name: {
                 firstName:  { type: String, require: true },
                 lastName:   { type: String, require: true }
             },
             email:      { type: String, require: true },
-            phone:      { type: String, require: true },
+            phone:      { type: String, require: true }
         }
     ],
     images: [
         {
             title:    { type: String },
             caption:  { type: String },
-            img:      { type: String },
-            link:     { type: String },
-        },
+            img:      { type: String }
+        }
     ],
     socialMedia: [
         {
             title:    { type: String },
-            caption:  { type: String },
             img:      { type: String },
-            link:     { type: String },
-        },
+            link:     { type: String }
+        }
     ]
 });
 

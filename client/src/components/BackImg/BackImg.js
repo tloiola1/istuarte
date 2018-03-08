@@ -3,4 +3,4 @@ import  '../../stylesheets/components/backimg.css';
 
 export const BackImg = props =>
 
-<img {...props}/>
+<img {...props} alt='backgorund'/>

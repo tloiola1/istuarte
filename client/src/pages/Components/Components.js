@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import { Logo, Brand } from '../../components/Brand';
 import { BackImg} from '../../components/BackImg';
 import  '../../stylesheets/components/all.css';

@@ -2,23 +2,25 @@ const mongoose = require("mongoose");
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
 
-// Using the Schema constructor, create a new AdminSchema object
+// Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 const AdminSchema = new Schema({
 
-    name: {
-        firstName:  { type: String, require: true },
-        lastName:   { type: String, require: true }
-    },
-    email:      { type: String, require: true },
-    password:    { type: String, require: true },
-    phone:      { type: String, require: true },
-    secureQuestion: [
-        {
-            question:   { type: String, require: true },
-            answer:     { type: String, require: true }
-        }
-    ],
+  about_header: { type: String },
+  about_caption: { type: String },
+  profile_img: { type: String },
+
+  contact_header: { type: String },
+
+  connect_header: { type: String },
+  connect_img: { type: String },
+  connect_link: { type: String },
+  connect_caption: { type: String },
+  
+  background_img: { type: String },
+  fixedheader_color: { type: String },
+  link_color: { type: String },
+  backgroundimg_color: { type: String }
 });
 
 // This creates our model from the above schema, using mongoose's model method

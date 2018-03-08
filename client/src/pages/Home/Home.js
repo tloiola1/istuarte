@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { Jumbotron, Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import { Logo, Brand } from '../../components/Brand';
 import { BackImg} from '../../components/BackImg';
 import  '../../stylesheets/components/all.css';
 import  '../../stylesheets/components/icons.css';
 import  { NavHeader } from './NavHeader.js';
 import  { NavFooter } from './NavFooter.js';
+import CMS from "../../utils/CMS";
 // import  '../../stylesheets/components/backimg.css';
 // import $ from 'jquery';
 
 class Home extends Component {
     
-    componentDidMount() {      
+    componentDidMount() {
+        this.loadData();
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions.bind(this));
     }
@@ -25,7 +27,15 @@ class Home extends Component {
             background_img: 'http://tekthost.info/wp-content/uploads/2017/12/imposing-hair-salon-flooring-ideas-regarding-floor-how-to-design-a-functional-and-attractive-beauty-mary.jpg',
         };
     }
-
+    loadData(){
+        CMS
+        .Get()
+        .then(res => {
+            console.log(res);
+            console.log(res.status);
+        })
+        .catch(err => console.log(err));
+    }
     updateDimensions() {
         let innerWidth = window.innerWidth;
         let innerHeight = window.innerHeight;

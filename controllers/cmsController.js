@@ -1,37 +1,21 @@
 const db = require("../models");
 
-// Defining methods for the CmsController
+// Defining methods for the userController
 module.exports = {
-  findAll: function(req, res) {
+  Get: function(req, res) {
+    console.log("CMS Controller Get");
     db.Cms
-      .find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
+      .find()
+      .then(_Content =>{console.log(_Content); res.json(_Content)})
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
-    db.Cms
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
+  Post: function(req, res) {
+    console.log("CMS Controller Post");
+    console.log(req.body);
     db.Cms
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  update: function(req, res) {
-    db.Cms
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  remove: function(req, res) {
-    db.Cms
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+      .then(_Content => res.json(_Content))
       .catch(err => res.status(422).json(err));
   }
+
 };

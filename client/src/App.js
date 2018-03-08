@@ -10,6 +10,7 @@ import CMS from "./pages/CMS";
 
 const App = () => 
   <Router>
+    <div>
       <Switch>
         <Route exact path="/register" component={ Register } />
         <Route exact path="/products" component={ Products } />
@@ -19,5 +20,6 @@ const App = () =>
         <Route exact path="/" component={ Home } />
         <Route exact path="/components" component={ Components } />
       </Switch>
+    </div>
 </Router>;
 export default App;

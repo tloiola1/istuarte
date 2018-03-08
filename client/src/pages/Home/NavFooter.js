@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-import { Row, Col } from "react-bootstrap";
-import { SettingsIcon, HomeIcon, ButtonIcon } from "../../components/Icon";
-import { Logo, Brand } from '../../components/Brand';
-import { Button } from '../../components/Buttons';
+import { Col } from "react-bootstrap";
 import { Icon, SMContainer } from '../../components/SocialMedia';
 import  '../../stylesheets/components/icons.css';
 import  '../../stylesheets/components/mediaQueries.css';

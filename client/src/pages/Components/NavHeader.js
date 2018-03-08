@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Logo, Brand } from '../../components/Brand';
 import { Button } from '../../components/Buttons';
 import { Icon, SMContainer } from '../../components/SocialMedia';
 import  '../../stylesheets/components/all.css';
