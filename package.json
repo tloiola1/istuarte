@@ -9,10 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
-    "client": "cd client && yarn start",
+    "client": "cd client && npm run start",
     "build": "node scripts/build.js",
     "prestart": "npm run build",
-    "start": "npm-run-all --parallel server client"
+    "files": "npm-run-all --parallel server client",
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
