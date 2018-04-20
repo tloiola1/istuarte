@@ -1,5 +1,4 @@
-import React from "react";
-import '../../stylesheets/components/icons.css';
+import React from "react"; 
 
 export const ButtonIcon = props =>
 <span className="icon" >

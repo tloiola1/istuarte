@@ -1,0 +1,61 @@
+/* ********************** TOP HEADER ************************* */
+.header{
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    background-color: hsla(29, 53%, 30%, 0.904);
+}
+span .icon{
+    padding: .5rem;
+}
+.left a  {
+    color: rgb(255, 255, 255);
+}
+.left a:hover {
+    text-decoration: unset;
+}
+
+.right{
+    float: right;
+}
+.social-media{
+    border-radius: .4rem;
+    color: hsla(29, 53%, 30%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+.right a  {
+    margin: .5rem;
+    color: hsla(29, 53%, 30%);
+}
+.right a:hover {
+    text-decoration: unset;
+}
+
+/* ********************** MAIN HEADER ************************* */
+.main-header{
+    display: flex;
+    font-weight: bold;
+    font-size: 19px;
+    align-items: baseline;
+    justify-content: center;
+}
+.main-header a{
+    color: hsla(29, 53%, 30%);
+    padding: 1rem;
+    margin: 5px;
+}
+.main-header a:hover{
+    text-decoration-line: unset;
+}
+
+.openNav{
+    float: right;
+    font-size:30px;
+    cursor:pointer;
+    padding: 0 .8rem;
+    border-radius: 10%;
+    color: hsla(29, 53%, 30%);
+    background-color: rgb(255, 255, 255);
+}

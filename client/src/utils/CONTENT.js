@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
 
-    Get: function(){
+    GetContent: function(){
         console.log('Get Cms');
         return axios.get('/api/cms');
     },

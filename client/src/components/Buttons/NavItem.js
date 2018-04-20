@@ -1,5 +1,4 @@
-import React from 'react';
-import '../../stylesheets/components/navbar.css';
+import React from 'react'; 
 
 export const NavItem = ({ children }) => 
 <li role='presentation'>

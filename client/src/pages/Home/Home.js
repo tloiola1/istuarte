@@ -1,100 +1,129 @@
-import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
-import { Logo, Brand } from '../../components/Brand';
-import { BackImg} from '../../components/BackImg';
-import  '../../stylesheets/components/all.css';
-import  '../../stylesheets/components/icons.css';
-import  { NavHeader } from './NavHeader.js';
-import  { NavFooter } from './NavFooter.js';
-import CMS from "../../utils/CMS";
-// import  '../../stylesheets/components/backimg.css';
-// import $ from 'jquery';
+import React, {Component} from 'react';
+import {Grid, Row, Col} from 'react-bootstrap';
+import CONTENT from "../../utils/CONTENT";
+import '../../stylesheets/home.css';
+import '../../stylesheets/@media_home.css';
 
 class Home extends Component {
-    
-    componentDidMount() {
+
+    componentWillMount() {
         this.loadData();
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions.bind(this));
     }
 
-    constructor( props ){
+    constructor(props) {
         super(props);
-        this.state ={
-            brand: 'ISTU ARTE',
-            X: '|||',
-            rotate: 'rotate90',
-            background_img: 'http://tekthost.info/wp-content/uploads/2017/12/imposing-hair-salon-flooring-ideas-regarding-floor-how-to-design-a-functional-and-attractive-beauty-mary.jpg',
+        this.state = {
+            cms: [],
+            main_phone: '',
+            social_media: '',
+            brand_size: '',
         };
     }
-    loadData(){
-        CMS
-        .Get()
-        .then(res => {
-            console.log(res);
-            console.log(res.status);
-        })
-        .catch(err => console.log(err));
+    loadData() {
+        CONTENT
+            .GetContent({})
+            .then(res => {
+                this.SetMyStates(res);
+                console.log(res.status);
+            })
+            .catch(err => console.log(err));
+    }
+
+    SetMyStates(res) {
+        this.setState({cms: res.data[0]});
+        this.setState({main_phone: this.state.cms.contact[0].phone});
+        this.setState({social_media: this.state.cms.socialMedia});
+
+        console.log(this.state.social_media);
     }
     updateDimensions() {
         let innerWidth = window.innerWidth;
         let innerHeight = window.innerHeight;
-        this.setState({ width: innerWidth, height: innerHeight });
-        if(innerWidth < 500) {
-            this.setState({ width: 450, height: 102 });
-        } else {
-            let update_width  = window.innerWidth;
-            let update_height = Math.round(update_width);
-            this.setState({ width: update_width, height: update_height });
-        }
+        let brand_size = '';
+        this.setState({width: innerWidth, height: innerHeight });
+        if(innerWidth > 1024)brand_size = innerWidth/20;
+        if(innerWidth > 800 && innerWidth <= 1024)brand_size = innerWidth/15;
+        if(innerWidth > 0 && innerWidth < 800)brand_size = innerWidth/10;
+
+        this.setState({brand_size: brand_size });
     }
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateDimensions.bind(this));
     }
 
-    toggleIcon(){
-        if(this.state.X === 'X'){
-            this.setState({X: '|||'});
-            this.setState({rotate: 'rotate90'});
-        }else {
-            this.setState({X: 'X'});
-            this.setState({rotate: 'rotateX'});
-        }
+    openNav(){
+        console.log("nav");
     }
-    render(){
-        return(
-            <div>
-                {this.state.width > 664 ?
-                <BackImg className='backimg' src={this.state.background_img}/>
-                :<span/>}
-                <Row>
-                {this.state.width > 440 ?
-                    <Col lg={12}>
-                        <Brand>
-                            <Logo>
-                                <nav className="navbar">
-                                    <a href='/' className='brand-name'>{this.state.brand}</a>
-                                    {this.state.width > 768 && this.state.width <= 992?
-                                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={()=>{this.toggleIcon()}}>
-                                    <span id={this.state.rotate} className="navbar-toggler-icon">{this.state.X}</span>
-                                    </button>
-                                    : this.state.width > 768 ? <NavHeader/> : <span/>}
-                                </nav>                    
-                            </Logo>
-                        </Brand>
-                        {this.state.width > 768 && this.state.width <= 992?
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <NavHeader/>
-                            </div>
-                        :<span></span>}
-                    </Col>
-                    : <span/>}
-                    {this.state.width <= 768 ?
-                    <Grid> <NavFooter/> </Grid>
-                    : <span/>}
 
-                </Row>
-            </div>
+    closeNav(){
+        console.log("nav");
+    }
+    //Render
+    render() { //https://www.dobneylondon.co.uk/
+        return (
+            <span>
+                <div className='header'>
+                    <Grid>
+                        <span className='left'>
+                            <a href='tel:{this.state.main_phone}' className="fa-phone">
+                                <i className="fas fa-phone"></i>{" "}{this.state.main_phone}</a>
+                        </span>
+                        <span className='right'>
+                            <div className='social-media'>
+                                {this.state.social_media.length
+                                    ? <span>
+                                            {this
+                                                .state
+                                                .social_media
+                                                .map(media => (
+                                                    <span key={media._id}>
+                                                        <a href={media.link} target='_blank'>
+                                                            <i className='icon' className={media.icon}>{" "}</i>
+                                                        </a>
+                                                    </span>
+                                                ))}{/**/}
+                                        </span>
+                                    : <span/>}
+                            </div>
+                        </span>
+                        <span className='openNav'>
+                            <span onClick={this.openNav}>&#9776;</span>
+                        </span>
+                    </Grid>
+                </div>
+                {/*<span style={{fontSize:"30px", cursor:"pointer"}} onClick={this.openNav}>&#9776;</span>*/}
+                {/*<a href="javascript:void(0)" className='closebtn' onClick={this.closeNav}>&times;</a>*/}
+                <Grid>
+                    <Row>
+                        <Col sm={12}>
+                            <div id="mySidenav" className='main-header sidenav'>
+                                <div>
+                                    <a href='/'>INICIO</a>
+                                </div>
+                                <div>
+                                    <a href='/stylistes'>PROFISSIONAIS</a>
+                                </div>
+                                <div className='brand-name' style={{fontSize:this.state.brand_size}}>
+                                    <a href='/'>ISTU ARTE</a>
+                                </div>
+                                <div>
+                                    <a href='/servicos'>SERVICOS</a>
+                                </div>
+                                <div>
+                                    <a href='/agenda'>AGENDA</a>
+                                </div>
+                            </div>
+                            <hr/>
+                        </Col>
+                    </Row>
+                </Grid>
+                {/*
+                <p>{this.state.width}</p>
+                <p>{this.state.brand_size}</p>
+                */}
+            </span>
         )
     }
 

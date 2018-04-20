@@ -34,6 +34,4 @@ mongoose.connect( MONGODB_URI );
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
-   
-
 //git remote set-url heroku https://git.heroku.com/pro-manager.git

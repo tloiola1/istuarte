@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../stylesheets/components/brand.css';
 
 export const Brand = ({ children }) => 
 <div className='bar'>

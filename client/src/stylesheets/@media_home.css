@@ -1,0 +1,41 @@
+@media only screen and (min-width: 1024px){
+    .openNav{
+        visibility: hidden;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 1024px){
+    .openNav{
+        position: fixed;
+        right: .5rem;
+        bottom: .5rem;
+        color: rgb(255, 255, 255);
+        background-color: hsla(29, 53%, 30%);
+        box-shadow: 1px 1px 10px hsla(29, 53%, 30%);
+    }
+}
+@media only screen and (max-width: 1024px){
+    .main-header{
+        display: block;
+        margin-top: 100px;
+    }
+    .brand-name{
+        top: 0;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        padding-right: 1rem;
+    }
+}
+@media only screen and (max-width: 500px){
+    .header{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .right{
+        display: none;
+    }
+    .main-header{
+        font-size: 17px;
+    }
+}
